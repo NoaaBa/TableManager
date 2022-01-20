@@ -72,9 +72,6 @@ public class Table implements TableCommands {
     @Override
     public String toString() {
         return "Table{" +
-                "tableName='" + tableName + '\'' +
-                ", tableRows=" + tableRows +
-                ", randomizedEntityIDs=" + randomizedEntityIDs +
-                '}';
+                "tableName='" + tableName + '}';
     }
 }

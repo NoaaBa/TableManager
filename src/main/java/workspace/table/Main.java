@@ -13,6 +13,7 @@ public class Main {
     public static void runCommandsInput() {
         MenuSchemaOutputManager menuManager = new MenuSchemaOutputManager();
         SchemasManager schemasManager = new SchemasManager();
+        schemasManager.loadSchemas();
 
         int userMenuChoice = 0;
         while (userMenuChoice != menuManager.getMaxChoice()) {

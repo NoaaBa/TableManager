@@ -7,6 +7,10 @@ public class Schema {
     private String schemaName;
     private ArrayList<Table> tables;
 
+    public Schema() {
+        this.tables = new ArrayList<>();
+    }
+
     public Schema(String schemaName) {
         this.schemaName = schemaName;
         this.tables = new ArrayList<>();

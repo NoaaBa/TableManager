@@ -11,7 +11,7 @@ public class MenuTableOutputManager {
 
         System.out.println("What would you like to do?\n" +
                 "1) Create a table.\n2) Delete table.\n" +
-                "3) Print table. 4) Work on an existing table.\n5) Exit.");
+                "3) Print schema's table.\n4) Work on an existing table.\n5) Exit.");
 
         int userChoice = scanner.nextInt();
         while (!checkUserChoice(userChoice)) {

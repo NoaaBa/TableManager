@@ -10,7 +10,7 @@ public class MenuRowsOutputManager {
 
         System.out.println("What would you like to do?\n" +
                 "1) Add a new row.\n2) Delete a row.\n" +
-                "3) Update row.\n4) Print rows.\n5) Exit.");
+                "3) Update row.\n4) Print table's rows.\n5) Exit.");
 
         int userChoice = scanner.nextInt();
         while (!checkUserChoice(userChoice)) {
