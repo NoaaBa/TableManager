@@ -8,14 +8,16 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class XmlFileParser {
     public void parseFile() {
         try {
-            File file = new File(new PropertiesFilesHandler().getDataSavedLocation());
-            JAXBContext jaxbContext = JAXBContext.newInstance(Schema.class);
+            FileInputStream file = new FileInputStream(new PropertiesFilesHandler().getDataSavedLocation());
+            JAXBContext jaxbContext = JAXBContext.newInstance(SchemasManager.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             SchemasManager que = (SchemasManager) jaxbUnmarshaller.unmarshal(file);
@@ -26,7 +28,10 @@ public class XmlFileParser {
                         ans
                 );
             }
-        } catch (JAXBException | IllegalArgumentException ignored) {
+        } catch (JAXBException | IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
